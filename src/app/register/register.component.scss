@@ -2,13 +2,6 @@
     padding-top: 100px;
 }
 
-#reg-form {
-    border: 1px solid #5F9EA0;
-    border-radius: 15px;
-    padding: 0px 20px 20px 20px;
-    background-color: #fff;
-}
-
 .formError {
     color: red;
     padding-left: 5px;
@@ -52,3 +45,59 @@ input.ng-invalid.ng-touched
       opacity: 0;
     }
   }
+
+
+
+  /* CSS talk bubble */
+.talk-bubble {
+  position: relative;
+  height: auto;
+
+}
+.border{
+border: 8px solid #666;
+}
+.round{
+border-radius: 30px;
+-webkit-border-radius: 30px;
+-moz-border-radius: 30px;
+
+}
+
+
+/*Right triangle, placed bottom right side slightly in*/
+.tri-right.border.btm-right-in:before {
+content: ' ';
+position: absolute;
+width: 0;
+height: 0;
+left: auto;
+right: 30px;
+bottom: -40px;
+border: 20px solid;
+border-color: #666 #666 transparent transparent;
+}
+.tri-right.btm-right-in:after{
+content: ' ';
+position: absolute;
+width: 0;
+height: 0;
+left: auto;
+right: 38px;
+bottom: -20px;
+border: 12px solid;
+border-color: white white transparent transparent;
+}
+
+
+/* talk bubble contents */
+.talktext{
+padding: 1em;
+text-align: left;
+line-height: 1.5em;
+}
+.talktext p{
+/* remove webkit p margins */
+-webkit-margin-before: 0em;
+-webkit-margin-after: 0em;
+}
