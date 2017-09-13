@@ -1,3 +1,7 @@
+import { AuthenticateGuard } from './shared/guards/authenticate.guard';
+import { UsersService } from './shared/services/users.service';
+import { MessageService } from './shared/services/message.service';
+import { AuthService } from './shared/services/auth.service';
 import { ImageCropperModule } from 'ng2-img-cropper';
 
 import { FormsModule } from '@angular/forms';
@@ -47,7 +51,7 @@ import { ChatUserComponent } from './chat-room/chat-users/chat-user/chat-user.co
     FormsModule,
     ImageCropperModule
   ],
-  providers: [],
+  providers: [AuthService, MessageService, UsersService, AuthenticateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
