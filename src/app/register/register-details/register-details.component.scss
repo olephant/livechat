@@ -1,0 +1,51 @@
+.details {
+    padding-top: 100px;
+}
+
+.formError {
+    color: red;
+    padding-left: 4px;
+}
+
+.form-control {
+    margin-bottom: 2px;
+}
+
+.user-availability {
+    color: cornflowerblue;
+    padding-left: 13px;
+}
+
+.user-taken {
+    color: red;
+}
+
+.dropOff {
+    margin-top: 30px;
+    width: 100%;
+    height: 200px;
+    border: 2px dashed teal;
+    background-color: aliceblue;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.dropOffActive {
+    border: 2px solid teal;
+   background-color: darken(aliceblue,10%)
+}
+
+.dragtext {
+    margin-top: 45px;
+}
+.glyphicon-save {
+    margin-bottom: 8px;
+   font-size: 3em; 
+   color: lightgray;
+   &:hover {
+    cursor: pointer;
+    color: darken(lightgray, 5%);
+
+   }
+}
+

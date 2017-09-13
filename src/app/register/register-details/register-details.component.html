@@ -1,3 +1,59 @@
-<p>
-  register-details works!
-</p>
+<div class='container details'>
+  <div class='row'>
+    <div class='col-xs-12 col-sm-6 col-sm-offset-3'>
+      <form #f="ngForm" id="detail-form">
+        <div class='row'>
+          <div class='col-xs-12'>
+            <div class='form-group'>
+              <label for='name'>Display Name</label>
+              <input type='text' id='name' name='name' class='form-control' [(ngModel)]='username' #usernameErr= ngModel (keyup)='checkUsername()' autocomplete="off" required placeholder="public display name">
+
+              <span *ngIf="!f.valid && hasSelected" class="formError">Please provide a display name.</span>
+
+              <div [ngClass]='{hidden : hideAvailability }' class="user-availability">
+                <p *ngIf="username && usernameAvailable">
+                  {{ username }} is available.
+                </p>
+                <p class="user-taken" *ngIf="username && !usernameAvailable">
+                  {{ username }} is taken.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+          <div class='col-xs-12 col-sm-6'>
+            <div class='form-group'>
+            
+            <div  class="dropOff"
+                  appFileDrop 
+                  (filesDropped) = 'fileChangeListenerDrop($event)'
+                  (filesHovered) = 'dropOverState($event)'
+                  [ngClass]="{'dropOffActive' : dragOver }">
+      
+              <div class="dragtext">
+                  <i class="glyphicon glyphicon-save center-block" (click)="file.click()"></i>
+                  <p>Choose profile image or drag it here.</p>   
+              </div>
+           
+            </div>
+            
+          </div>
+          </div>
+          <div class='col-xs-12 col-sm-6'>
+            <div class='form-group'>
+              <div class="file-upload">
+                <input id="custom-input" class="hidden" type="file" (change)="fileChangeListener($event)" #file>
+              </div>
+              <div *ngIf="hasSelected">
+                <img-cropper #cropper [image]="data" [settings]="cropperSettings"></img-cropper>
+              </div>
+            </div>
+          </div>
+           </div>
+        </div>
+
+        <button *ngIf="hasSelected" class='btn btn-default' type='button' [disabled]='!f.valid' (click)='updateProfile()'>Save Profile</button>
+      </form>
+    </div>
+  </div>
+</div>
