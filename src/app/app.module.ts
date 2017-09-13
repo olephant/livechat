@@ -1,3 +1,5 @@
+import { appRoutes } from './../routes';
+import { RouterModule } from '@angular/router';
 import { AuthenticateGuard } from './shared/guards/authenticate.guard';
 import { UsersService } from './shared/services/users.service';
 import { MessageService } from './shared/services/message.service';
@@ -49,7 +51,8 @@ import { ChatUserComponent } from './chat-room/chat-users/chat-user/chat-user.co
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     FormsModule,
-    ImageCropperModule
+    ImageCropperModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [AuthService, MessageService, UsersService, AuthenticateGuard],
   bootstrap: [AppComponent]
