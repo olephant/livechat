@@ -8,7 +8,7 @@
             <div class='form-group'>
               <label for='email'>Email</label>
               <input type='text' id='email' name='email' class='form-control' placeholder="Valid Email Address" required email ngModel
-                #email=ngModel autocomplete="off">
+                #email=ngModel autocomplete="on">
               <span class="formError" *ngIf="!email.valid && email.touched">Please enter a valid email address</span>
             </div>
             <div class='form-group'>
