@@ -41,22 +41,6 @@ $otherMessage: white;
 
 
 /*Right triangle, placed bottom left side slightly in*/
-.tri-right.border.btm-left:before {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-	left: -8px;
-  right: auto;
-  top: auto;
-	bottom: -40px;
-	border: 32px solid;
-	border-color: transparent transparent transparent #666;
-
-}
-
-
-/*Right triangle, placed bottom left side slightly in*/
 .tri-right.border.btm-left-in:before {
 	content: ' ';
 	position: absolute;
@@ -105,32 +89,6 @@ $otherMessage: white;
 	border: 12px solid;
 	border-color: $ownmessage $ownmessage transparent transparent;
 }
-
-
-/*Right triangle, placed bottom right side slightly in*/
-.tri-right.border.btm-right:before {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: auto;
-	right: -8px;
-	bottom: -40px;
-	border: 20px solid;
-	border-color: #666 #666 transparent transparent;
-}
-.tri-right.btm-right:after{
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: auto;
-	right: 0px;
-	bottom: -20px;
-	border: 12px solid;
-	border-color: $ownmessage $ownmessage transparent transparent;
-}
-
 
 
 /* talk bubble contents */
