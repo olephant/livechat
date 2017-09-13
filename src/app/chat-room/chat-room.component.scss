@@ -1,3 +1,11 @@
+.welcome {
+    position: absolute;
+    top: 12px;
+    z-index: 2000;
+    color: white;
+    text-transform: capitalize;
+}
+
 .chat-feed {
     padding: 70px 20px 10px 20px;
     overflow-y: scroll !important;
