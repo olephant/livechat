@@ -23,4 +23,13 @@ export class MessageService {
       .catch(error => console.log(error.message, 'creating message'));
   }
 
+  // Return an observable list with optional query
+  // You will usually call this from OnInit in a component
+  getItemsList(query = {}): FirebaseListObservable<Message[]> {
+    this.items = this.ngDb.list('/messages', {
+      query: query
+    });
+    return this.items;
+  }
+
 }
