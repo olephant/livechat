@@ -43,6 +43,15 @@ export class UsersService {
       return this.db.object(`usernames/${username}`);
     }
 
+  // Return an observable list with optional query
+  // You will usually call this from OnInit in a component
+  getAllUsers(query = {}): FirebaseListObservable<User[]> {
+    this.users = this.db.list('users/', {
+      query: query
+    });
+    return this.users;
+  }
+
 }
 
 

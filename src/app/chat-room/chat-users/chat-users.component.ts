@@ -1,3 +1,6 @@
+import { User } from './../../shared/models/user';
+import { FirebaseListObservable } from 'angularfire2/database';
+import { UsersService } from './../../shared/services/users.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatUsersComponent implements OnInit {
 
-  constructor() { }
+  users: FirebaseListObservable<User[]>;
+
+  constructor(
+    private usersService: UsersService
+  ) { }
 
   ngOnInit() {
+    this.users = this.usersService.getAllUsers({orderByChild: 'status' });
   }
 
 }
