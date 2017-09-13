@@ -27,6 +27,8 @@ export class NavbarComponent implements OnInit {
   }
 
   // send left coversation
-  signOut() {}
+  signOut() {
+    this.auth.signOut();
+  }
 
 }
