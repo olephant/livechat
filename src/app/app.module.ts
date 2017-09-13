@@ -29,6 +29,7 @@ import { ChatMessageComponent } from './chat-room/chat-feed/chat-message/chat-me
 import { ChatFormComponent } from './chat-room/chat-form/chat-form.component';
 import { ChatUsersComponent } from './chat-room/chat-users/chat-users.component';
 import { ChatUserComponent } from './chat-room/chat-users/chat-user/chat-user.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ChatUserComponent } from './chat-room/chat-users/chat-user/chat-user.co
     ChatMessageComponent,
     ChatFormComponent,
     ChatUsersComponent,
-    ChatUserComponent
+    ChatUserComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
