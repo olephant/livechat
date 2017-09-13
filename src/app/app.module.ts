@@ -13,11 +13,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FileDropDirective } from './shared/directives/file-drop.directive';
+import { ReversePipe } from './shared/pipes/reverse.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FileDropDirective
+    FileDropDirective,
+    ReversePipe
   ],
   imports: [
     BrowserModule,
