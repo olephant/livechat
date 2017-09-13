@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { User } from './../../../shared/models/user';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-chat-user',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat-user.component.scss']
 })
 export class ChatUserComponent implements OnInit {
+
+  @Input() user: User;
 
   constructor() { }
 
