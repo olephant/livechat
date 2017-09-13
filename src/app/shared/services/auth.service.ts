@@ -60,8 +60,9 @@ export class AuthService {
     // incase user does not complete the next section
     const data = {
       email: this.authState.email,
-      name: 'default',
-      avatar: 'default', // set it to a default image
+      name: 'Guest',
+      // tslint:disable-next-line:max-line-length
+      avatar: 'https://firebasestorage.googleapis.com/v0/b/livechat-9ccb0.appspot.com/o/profile%2Fprofile-pictures.png?alt=media&token=45b5b00e-0b85-4a5d-a3b2-9444e261137d', // set it to a default image
       status: true
     };
 
