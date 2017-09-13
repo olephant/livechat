@@ -1,3 +1,17 @@
-<p>
-  chat-room works!
-</p>
+<div class="row">
+  <div class='col-xs-12 col-sm-9'>
+      <div #scroller class="chat-feed">
+          <app-chat-feed></app-chat-feed>
+      </div>
+  </div>
+  <div class='col-sm-3'>
+      <div class="sidebar">
+          <app-chat-users></app-chat-users>
+      </div>
+  </div>
+
+</div>
+
+<div class="input-area">
+  <app-chat-form></app-chat-form>
+</div>

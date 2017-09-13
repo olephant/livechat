@@ -1,0 +1,27 @@
+.chat-feed {
+    padding: 70px 20px 10px 20px;
+    overflow-y: scroll !important;
+    height: 90vh;  
+}
+
+.sidebar {
+    display:block;
+    height:100vh;
+    background-color: ghostwhite;
+    margin-right: -15px;
+    border-left: 1px solid ghostwhite;
+
+}
+.input-area {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+   
+}
+
+@media only screen and (max-width: 767px) {
+    .sidebar {
+        display: none;
+    }
+}
