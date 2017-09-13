@@ -1,0 +1,54 @@
+.register {
+    padding-top: 100px;
+}
+
+#reg-form {
+    border: 1px solid #5F9EA0;
+    border-radius: 15px;
+    padding: 0px 20px 20px 20px;
+    background-color: #fff;
+}
+
+.formError {
+    color: red;
+    padding-left: 5px;
+}
+
+.form-control {
+    margin-bottom: 2px;
+}
+
+input.ng-invalid.ng-touched
+{
+    border: 1px solid red !important;
+} 
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    margin: -30px 0px 0px 250px;
+    background-color: #333;
+  
+    border-radius: 100%;  
+    -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+    animation: sk-scaleout 1.0s infinite ease-in-out;
+  }
+  
+  @-webkit-keyframes sk-scaleout {
+    0% { -webkit-transform: scale(0) }
+    100% {
+      -webkit-transform: scale(1.0);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes sk-scaleout {
+    0% { 
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    } 100% {
+      -webkit-transform: scale(1.0);
+      transform: scale(1.0);
+      opacity: 0;
+    }
+  }
