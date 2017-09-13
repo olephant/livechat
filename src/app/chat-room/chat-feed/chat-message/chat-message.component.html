@@ -1,3 +1,35 @@
-<p>
-  chat-message works!
-</p>
+<div class='row'>
+    <div class='col-xs-12 col-sm-6' [ngClass]='{"col-sm-offset-6" : ownMessage }' [ngClass]='{"col-sm-offset-0" : !ownMessage }'>
+        <div class="wrap">
+            <div *ngIf="ownMessage">
+                <div class="talk-bubble tri-right border round btm-right-in own">
+                    <div class="talktext">
+                        <div class="msg">
+                            <img [src]="message.avatar" alt="Avatar" class="avatar pull-left img-circle"> {{ message?.body
+                            }}
+                        </div>
+                        <div class="user">
+                            {{ message?.name }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="!ownMessage">
+                <div class="talk-bubble tri-right border round btm-left-in other">
+                    <div class="talktext">
+                        <div class="msg">
+                            <img [src]="message.avatar" alt="Avatar" class="avatar pull-left img-circle"> {{ message?.body
+                            }}
+                        </div>
+                        <div class="user">
+                            {{ message?.name }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
