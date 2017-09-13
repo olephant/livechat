@@ -1,3 +1,4 @@
+import { Subject } from 'rxjs/Rx';
 import { Router } from '@angular/router';
 import { User } from './../models/user';
 import { FirebaseListObservable, FirebaseObjectObservable, AngularFireDatabase } from 'angularfire2/database';
@@ -6,6 +7,9 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class UsersService {
+
+  // user add when user logs - initialised from chat-room
+  userDetails = new Subject<User>();
 
   user: FirebaseObjectObservable<User> = null;
   users: FirebaseListObservable<User[]> = null;
@@ -50,6 +54,11 @@ export class UsersService {
       query: query
     });
     return this.users;
+  }
+
+  getUser(key: string): FirebaseObjectObservable<User> {
+    this.user = this.db.object(`users/${key}`);
+    return this.user;
   }
 
 }
