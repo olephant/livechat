@@ -1,3 +1,31 @@
-<p>
-  navbar works!
-</p>
+<!-- remove all href properties as these will try to reload the page -->
+<nav class="navbar navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+      <div class="navbar-header">
+          <!-- toggle toggleMenu state -->
+          <button type="button" class="navbar-toggle collapsed" aria-expanded="false" 
+          (click)='onToggle()'>
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+         
+
+      </div>
+      <!-- add class to open menu depending on toggleMenu state -->
+      <div [ngClass]='{in : toggleMenu }' class="collapse navbar-collapse">
+          <!-- close menu when a link is clicked -->
+          <span (click)='toggleMenu = false'>
+          <ul class="nav navbar-nav"> 
+
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li *ngIf="!(currentUser|async)?.uid" routerLinkActive="active"><a routerLink='/login'>Sign In</a></li>
+            <li *ngIf="(currentUser|async)?.uid"><a (click)='signOut()'>Sign Out</a></li>
+          </ul>
+      </span>
+      </div>
+  </div>
+</nav>
