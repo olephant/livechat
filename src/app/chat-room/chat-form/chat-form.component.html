@@ -1,3 +1,6 @@
-<p>
-  chat-form works!
-</p>
+<input 
+  type="text" 
+  class="form-control message" 
+  (keyup.enter)="sendMessage()" 
+  [(ngModel)]='message.body'
+  placeholder="Message">
