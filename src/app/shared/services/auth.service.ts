@@ -6,6 +6,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 
 
 @Injectable()
+
 export class AuthService {
 
   authState: any = null;
@@ -52,24 +53,45 @@ export class AuthService {
   }
 
   private updateUserData(): void {
+    // Endpoint firebase
+    const path = `users/${this.currentUserId}`;
 
-        // Endpoint firebase
-        const path = `users/${this.currentUserId}`;
+    // add some default values for name and avitar
+    // incase user does not complete the next section
+    const data = {
+      email: this.authState.email,
+      name: 'default',
+      avatar: 'default', // set it to a default image
+      status: true
+    };
 
-        // add some default values for name and avitar
-        // incase user does not complete the next section
-        const data = {
-           email: this.authState.email,
-           name: 'default',
-           avatar: 'default', // set it to a default image
-           status: true
-        };
-
-        // after updating user info navigate to the profile page where
-        // user add displayname and avitar
-        this.db.object(path).update(data)
-          .then(() => this.router.navigate(['register', 'profile']))
-          .catch(error => console.log(error.message, ' Add new user error'));
+    // after updating user info navigate to the profile page where
+    // user add displayname and avitar
+    this.db.object(path).update(data)
+      .then(() => this.router.navigate(['register', 'profile']))
+      .catch(error => console.log(error.message, ' Add new user error'));
   } // updateUserData
+
+  emailLogin(email: string, password: string): any {
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+    .then((user) => {
+      this.authState = user;
+      this.setStatus(true);
+      this.router.navigate(['chat']);
+    })
+    .catch(error => this.firebaseError.next(error.message));
+  }
+
+  signOut(): void {
+    this.afAuth.auth.signOut();
+    this.setStatus(false);
+    this.router.navigate(['/login']);
+  }
+
+  private setStatus(status: boolean): void {
+    const path = `users/${this.currentUserId}`; // Endpoint on firebase
+    const data = { status : status };
+    this.db.object(path).update(data).catch(error => console.log(error, ' setting status on login/out'));
+  }
 
 }
